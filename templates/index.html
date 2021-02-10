@@ -1,0 +1,90 @@
+<HTML>
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>gpt2-sherlock</title>
+    </head>
+    <body>
+        <div class = "container">
+            <div class="jumbotron mt-3">
+
+                <h1>gpt2-philosophical</h1>
+                <h3>generate philosophical script related to your keyword </h3>
+                <A>GitHub repository : </A> <A href="https://github.com/ha-mulan/gpt2-philosophical"> gpt2-philosophical repo</A>
+                <br>
+                <A>Open API : </A> <A href=https://master-gpt2-philosophical-ha-mulan.endpoint.ainize.ai/> on Ainize </A>
+
+                <hr class="solid">
+
+                <h2>How to use</h2>
+                <div id="usage">
+                    <p>1. input  keyword </p>
+                    <p>2. Press the Run button and wait for about 15 seconds to get the result.</p>
+                </div>
+
+
+                <hr class="solid">
+                <h2>Example</h2>
+                <div id="usage">
+                  <h5>if keyword is "murder"  you can checkout the result like this</h5>
+                </div>
+                <hr class="solid">
+		criminal use of it as any other man the card is some<br>
+hocuspocusa blind as like as not the only question is how did<br>
+he depart ah of course here is a hole in the roof with great<br>
+activity considering his bulk he sprang up the steps and squeezed<br>
+through into the garret and immediately afterwards we heard his<br>
+exulting voice proclaiming that he had found the trapdoor<br>
+<br>
+he can find something remarked holmes shrugging his shoulders<br>
+he has occasional glimmerings of reason il ny a pas des sots si<br>
+incommodes que ceux qui ont de lesprit<br>
+<br>
+you see said athelney jones reappearing down the steps again<br>
+facts are better than mere theories after all my view of the case<br>
+is confirmed there is a trapdoor communicating with the roof and<br>
+it is partly open<br>
+<br>
+it was i who opened it<br>
+<br>
+oh indeed you seem to have done the thing very completely i must compliment you<br>
+<br>
+my dear me mr sherlock holmes i was still balancing the matter in my mind how<br>
+prosaic i seem to have been i confess that i was unable to anticipate<br>
+<br>
+
+
+                <hr class="solid">
+                <h2>Make your own philosophical script </h2>
+                <p>Please enter keyword below</p>
+                <input id='keyword'>
+                <button onclick='printName()'>RUN</button>
+                <p></p>
+                <script type="text/javascript">
+                 function printName()  {
+                   const keyword = document.getElementById('keyword').value;
+
+                   fetch('/api/?keyword='+keyword).then(function(response){
+                     response.text().then(function(text){
+                       document.getElementById("result").innerText = text;
+                     })
+                   })
+                 }
+               </script>
+                  <hr class="solid">
+                <h2>your generated philosophical script</h2>
+                  <hr class="solid">
+                <div id='result'></div>
+
+    </div>
+            </div>
+        </div>
+    </body>
+</HTML>
