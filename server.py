@@ -51,9 +51,9 @@ def run_model(prompt, num=1, length=30):
         # model = models[model_name]
         sample_outputs = model.generate(input_ids, pad_token_id=50256,
                                         do_sample=True,
-                                        max_length=300,
+                                        max_length=50,
 
-                                        top_k=50,
+                                        top_k=35,
                                         num_return_sequences=num)
         generated_texts = ""
         for i, sample_output in enumerate(sample_outputs):
